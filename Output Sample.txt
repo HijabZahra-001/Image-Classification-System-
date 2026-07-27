@@ -1,0 +1,124 @@
+
+✅ Sample dataset created successfully!
+
+🔧 Initializing classifier...
+📁 Results will be saved in: results_20260727_082223
+
+==================================================
+📊 LOADING AND PREPROCESSING DATASET
+==================================================
+✅ Data augmentation enabled
+Found 48 images belonging to 3 classes.
+Found 12 images belonging to 3 classes.
+
+📊 Dataset Statistics:
+  Classes: ['birds', 'cats', 'dogs']
+  Training samples: 48
+  Validation samples: 12
+
+==================================================
+🏗️ BUILDING TRANSFER LEARNING MODEL
+==================================================
+2026-07-27 08:22:28.655414: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v2/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_224_no_top.h5
+9406464/9406464 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step
+✅ Using MobileNetV2 as base model
+
+🔄 Enabling fine-tuning...
+  Fine-tuning enabled (last layers trainable)
+
+
+
+
+
+
+==================================================
+🚀 TRAINING MODEL
+==================================================
+
+📈 Training for 5 epochs...
+Epoch 1/5
+2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 1s/step - accuracy: 0.3385 - loss: 1.7515  
+Epoch 1: val_accuracy improved from None to 0.25000, saving model to results_20260727_082223/best_model.h5
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2/2 ━━━━━━━━━━━━━━━━━━━━ 28s 10s/step - accuracy: 0.3333 - loss: 1.6312 - val_accuracy: 0.2500 - val_loss: 1.0792 - learning_rate: 0.0010
+Epoch 2/5
+2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 2s/step - accuracy: 0.5833 - loss: 1.1421
+Epoch 2: val_accuracy improved from 0.25000 to 0.41667, saving model to results_20260727_082223/best_model.h5
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2/2 ━━━━━━━━━━━━━━━━━━━━ 11s 6s/step - accuracy: 0.6042 - loss: 1.1009 - val_accuracy: 0.4167 - val_loss: 1.1239 - learning_rate: 0.0010
+Epoch 3/5
+2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 2s/step - accuracy: 0.6250 - loss: 0.8655
+Epoch 3: val_accuracy did not improve from 0.41667
+
+Epoch 3: ReduceLROnPlateau reducing learning rate to 0.00020000000949949026.
+2/2 ━━━━━━━━━━━━━━━━━━━━ 11s 4s/step - accuracy: 0.6250 - loss: 0.8689 - val_accuracy: 0.3333 - val_loss: 1.4757 - learning_rate: 0.0010
+Epoch 4/5
+2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 5s/step - accuracy: 0.8333 - loss: 0.3784
+Epoch 4: val_accuracy did not improve from 0.41667
+2/2 ━━━━━━━━━━━━━━━━━━━━ 9s 7s/step - accuracy: 0.8542 - loss: 0.3796 - val_accuracy: 0.4167 - val_loss: 1.4292 - learning_rate: 2.0000e-04
+Epoch 4: early stopping
+Restoring model weights from the end of the best epoch: 1.
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+
+✅ Training completed in 69.02 seconds!
+
+==================================================
+📊 EVALUATING MODEL
+==================================================
+
+📈 Evaluation Results:
+  Validation Loss: 1.1617
+  Validation Accuracy: 0.3333 (33.33%)
+
+==================================================
+📈 GENERATING TRAINING HISTORY PLOTS
+==================================================
+
+✅ Training history plots saved to: results_20260727_082223/training_history.png
+
+==================================================
+📊 GENERATING CONFUSION MATRIX
+==================================================
+
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+✅ Confusion matrix saved to: results_20260727_082223/confusion_matrix.png
+
+📊 Classification Report:
+------------------------------------------------------------
+              precision    recall  f1-score   support
+
+       birds       0.33      1.00      0.50         4
+        cats       0.00      0.00      0.00         4
+        dogs       0.00      0.00      0.00         4
+
+    accuracy                           0.33        12
+   macro avg       0.11      0.33      0.17        12
+weighted avg       0.11      0.33      0.17        12
+
+✅ Model saved as 'image_classifier_model.h5'
+
+==================================================
+🔮 TESTING PREDICTION
+==================================================
+
+
+🎯 Prediction Results:
+  Class: birds
+  Confidence: 49.62%
+
+============================================================
+✅ IMAGE CLASSIFICATION SYSTEM COMPLETED SUCCESSFULLY!
+============================================================
+
+📊 Results saved in: results_20260727_082223
+
+📁 Generated files:
+  - results_20260727_082223/best_model.h5
+  - results_20260727_082223/training_history.png
+  - results_20260727_082223/confusion_matrix.png
+
+🚀 To predict a new image:
+  classifier = CompleteImageClassifier()
+  classifier.load_complete_model('image_classifier_model.h5')
+  classifier.predict_image('path/to/your/image.jpg')
